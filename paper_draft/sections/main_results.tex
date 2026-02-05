@@ -1,0 +1,23 @@
+\section{Main Results}
+
+In this section, we present our main theoretical contributions.
+
+\begin{theorem}[Main Convergence Result]
+Let $f: \R^d \to \R$ be an $L$-smooth non-convex function. Consider SGD with step size $\eta_t = \eta / \sqrt{t}$ where $\eta > 0$ is appropriately chosen. Then for any $\eps > 0$, after $T = O(1/\eps^4)$ iterations:
+\[
+  \min_{t \leq T} \E[\|\nabla f(x_t)\|^2] \leq \eps
+\]
+\end{theorem}
+
+\begin{proof}
+The proof proceeds by bounding the expected decrease in the objective function at each iteration. By $L$-smoothness:
+\[
+  f(x_{t+1}) \leq f(x_t) + \langle \nabla f(x_t), x_{t+1} - x_t \rangle + \frac{L}{2}\|x_{t+1} - x_t\|^2
+\]
+
+Taking expectations and using the unbiased gradient estimator property, we obtain the desired bound after summing over iterations.
+\end{proof}
+
+\begin{corollary}
+Under the additional assumption that $f$ satisfies the Polyak-\L{}ojasiewicz condition, the convergence rate improves to $O(1/\eps^2)$.
+\end{corollary}

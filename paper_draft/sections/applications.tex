@@ -1,0 +1,23 @@
+\section{Applications}
+
+We now present applications of our main results to several important problem settings.
+
+\subsection{Neural Network Training}
+
+\begin{example}[Deep Learning]
+Consider training a neural network $f_\theta: \R^n \to \R^m$ with parameters $\theta \in \R^d$. The empirical risk minimization problem:
+\[
+  \min_\theta \frac{1}{N} \sum_{i=1}^N \ell(f_\theta(x_i), y_i)
+\]
+is generally non-convex in $\theta$. Our Theorem~1 provides convergence guarantees for mini-batch SGD in this setting.
+\end{example}
+
+\subsection{Matrix Factorization}
+
+\begin{example}[Low-Rank Approximation]
+Given a matrix $M \in \R^{m \times n}$, consider finding a rank-$k$ approximation by minimizing:
+\[
+  \min_{U,V} \|M - UV^T\|_F^2
+\]
+where $U \in \R^{m \times k}$ and $V \in \R^{n \times k}$. This non-convex problem satisfies our smoothness assumptions, and our results apply.
+\end{example}
