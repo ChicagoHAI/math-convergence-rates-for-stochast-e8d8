@@ -1,0 +1,14 @@
+\section{Introduction}
+
+Stochastic gradient descent (SGD) has emerged as the cornerstone algorithm for training modern machine learning models, particularly deep neural networks. While its behavior in convex optimization is well-understood \cite{robbins1951}, the theoretical analysis of SGD in non-convex settings remains an active area of research \cite{bottou2018optimization}.
+
+The optimization of non-convex functions presents several fundamental challenges:
+\begin{itemize}
+    \item Multiple local minima and saddle points can trap optimization algorithms
+    \item Noise in gradient estimates can significantly impact convergence
+    \item Traditional convex analysis tools do not directly apply
+\end{itemize}
+
+Recent work has shown that SGD can effectively escape saddle points \cite{ge2015escaping} and converge to local minima under certain conditions. However, the precise convergence rates and their dependence on problem parameters remain areas of active investigation.
+
+In this paper, we provide new theoretical results on the convergence rates of SGD for non-convex optimization. Our analysis focuses on establishing bounds on the number of iterations required to reach approximate stationary points, with explicit dependencies on the problem parameters and desired accuracy.
