@@ -1,0 +1,26 @@
+\section{Preliminaries}
+
+We consider the optimization problem:
+\begin{equation}
+    \min_{x \in \R^d} f(x) = \Ex_{z \sim \mathcal{D}}[F(x,z)]
+\end{equation}
+where $f: \R^d \to \R$ is a differentiable non-convex function, and $F(x,z)$ is a stochastic function depending on random variable $z$.
+
+\begin{definition}[L-Lipschitz Gradient]
+A function $f$ has $L$-Lipschitz gradient if for all $x,y \in \R^d$:
+\[\norm{\grad f(x) - \grad f(y)} \leq L\norm{x-y}\]
+\end{definition}
+
+\begin{definition}[$\beta$-Smooth Function]
+A function $f$ is $\beta$-smooth if for all $x,y \in \R^d$:
+\[f(y) \leq f(x) + \inner{\grad f(x)}{y-x} + \frac{\beta}{2}\norm{y-x}^2\]
+\end{definition}
+
+\begin{definition}[$\eps$-Approximate Stationary Point]
+A point $x \in \R^d$ is an $\eps$-approximate stationary point of $f$ if:
+\[\norm{\grad f(x)} \leq \eps\]
+\end{definition}
+
+The SGD algorithm generates iterates according to:
+\[x_{k+1} = x_k - \eta_k g(x_k, z_k)\]
+where $\eta_k$ is the step size and $g(x_k, z_k)$ is an unbiased estimate of $\grad f(x_k)$.
