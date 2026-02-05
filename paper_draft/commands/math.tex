@@ -1,10 +1,27 @@
-% Common math commands
+% Common mathematical notation
+\usepackage{amsfonts}
+
+% Number sets
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\C}{\mathbb{C}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+
+% Common operators
 \newcommand{\eps}{\varepsilon}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+% Norms and absolute values
 \newcommand{\norm}[1]{\left\|#1\right\|}
 \newcommand{\abs}[1]{\left|#1\right|}
+
+% Inner product
 \newcommand{\inner}[2]{\langle #1, #2 \rangle}
+
+% Probability and Statistics
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Prob}{\mathbb{P}}
